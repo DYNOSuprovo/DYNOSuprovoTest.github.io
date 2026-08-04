@@ -1,0 +1,1 @@
+Let's check lines 490 to 515 of `transcript_full.jsonl` to find the exact step where `nexusData` was passed:

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Auto Frame Exporter</title>
+<style>
+  body { background: #0b0f19; color: #00f2ff; font-family: monospace; padding: 2rem; }
+  .bar { width: 100%; height: 16px; background: #1e293b; border-radius: 8px; overflow: hidden; margin: 1rem 0; }
+  .fill { height: 100%; background: linear-gradient(90deg, #00f2ff, #ec4899); width: 0%; transition: width 0.1s; }
+  button { padding: 12px 24px; font-size: 16px; background: #00f2ff; color: #000; font-weight: bold; border: none; border-radius: 6px; cursor: pointer; margin-bottom: 1rem; }
+  video, canvas { display: none; }
+  #log { font-size: 0.85rem; color: #94a3b8; line-height: 1.5; height: 350px; overflow-y: auto; background: #04060a; padding: 1rem; border-radius: 8px; border: 1px solid #1e293b; }
+</style>
+</head>
+<body>
+  <h1>🎬 AUTOMATIC FRAME EXPORTER (150 WebP Frames)</h1>
+  <button id="startBtn" onclick="startExport()">▶ START FRAME EXTRACTION</button>
+  <div class="bar"><div id="fill" class="fill"></div></div>
+  <div id="status" style="font-size: 1.1rem; color: #fff; margin-bottom: 1rem;">Click button or wait for auto-start...</div>
+  <div id="log"></div>
+
+  <video id="vid" src="test-video.mp4" muted playsinline preload="auto"></video>
+  <canvas id="cvs"></canvas>
+
+<script>
+const vid = document.getElementById('vid');
+const cvs = document.getElementById('cvs');
+const ctx = cvs.getContext('2d');
+const statusEl = document.getElementById('status');
+const fillEl = document.getElementById('fill');
+const logEl = document.getElementById('log');
+let running = false;
+
+function log(msg) {
+  logEl.innerHTML += msg + '<br>';
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+async function startExport() {
+  if (running) return;
+  running = true;
+  document.getElementById('startBtn').style.display = 'none';
+
+  statusEl.textContent = 'Loading video test-video.mp4...';
+  vid.load();
+  await new Promise(r => {
+    if (vid.readyState >= 1) r();
+    else vid.onloadedmetadata = r;
+  });
+
+  const totalFrames = 150;
+  const step = vid.duration / totalFrames;
+  cvs.width = vid.videoWidth;
+  cvs.height = vid.videoHeight;
+
+  log(`Video loaded: ${vid.duration.toFixed(2)}s | ${vid.videoWidth}x${vid.videoHeight}`);
+  log(`Extracting ${totalFrames} WebP frames to c:\\New folder\\frames\\...`);
+
+  for (let i = 0; i < totalFrames; i++) {
+    const t = i * step;
+    await seekTo(t);
+    ctx.drawImage(vid, 0, 0, cvs.width, cvs.height);
+
+    const blob = await new Promise(r => cvs.toBlob(r, 'image/webp', 0.85));
+    const frameNum = String(i + 1).padStart(4, '0');
+    const fileName = `frame_${frameNum}.webp`;
+
+    try {
+      const resp = await fetch(`http://localhost:8000/upload-frame?name=${fileName}`, {
+        method: 'POST',
+        body: blob
+      });
+      const txt = await resp.text();
+      const pct = ((i + 1) / totalFrames * 100).toFixed(1);
+      fillEl.style.width = pct + '%';
+      statusEl.textContent = `[${i+1}/${totalFrames}] Saved ${fileName} (${pct}%)`;
+      if (i % 15 === 0) log(`[${pct}%] Saved ${fileName} at t=${t.toFixed(2)}s`);
+    } catch(err) {
+      log(`Error saving ${fileName}: ${err.message}`);
+    }
+  }
+
+  statusEl.textContent = `✅ DONE! All ${totalFrames} frames saved to disk!`;
+  log(`<strong>✅ EXPORT COMPLETE! 150 WebP frames ready in c:\\New folder\\frames\\</strong>`);
+}
+
+// Auto-start on load after 500ms
+window.onload = () => setTimeout(startExport, 500);
+</script>
+</body>
+</html>

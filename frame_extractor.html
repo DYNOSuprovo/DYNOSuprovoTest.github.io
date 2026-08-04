@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Frame Extractor</title>
+    <style>
+        body { background: #111; color: #fff; font-family: monospace; padding: 20px; }
+        h1 { color: #0ff; }
+        .frames { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .frame-box { text-align: center; }
+        .frame-box img { border: 1px solid #333; max-width: 320px; }
+        .frame-box p { font-size: 11px; color: #888; margin: 4px 0; }
+        #status { color: #0f0; margin: 10px 0; }
+        video { max-width: 640px; display: block; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Video Frame Extractor</h1>
+    <p>Extracting frames from the video...</p>
+    <video id="vid" src="Initial_Scene_-_2026-08-02_202608021959.mp4" muted></video>
+    <div id="status">Loading video...</div>
+    <div class="frames" id="frames"></div>
+
+    <script>
+        const video = document.getElementById('vid');
+        const framesDiv = document.getElementById('frames');
+        const statusDiv = document.getElementById('status');
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const FRAME_INTERVAL = 0.5;
+        let currentTime = 0;
+        let frameCount = 0;
+
+        video.addEventListener('loadedmetadata', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            statusDiv.textContent = `Video loaded: ${video.duration.toFixed(1)}s, ${video.videoWidth}x${video.videoHeight}. Extracting frames every ${FRAME_INTERVAL}s...`;
+            extractNextFrame();
+        });
+
+        video.addEventListener('seeked', () => {
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+            
+            const box = document.createElement('div');
+            box.className = 'frame-box';
+            box.innerHTML = `<img src="${dataUrl}" /><p>Frame ${frameCount} @ ${currentTime.toFixed(1)}s</p>`;
+            framesDiv.appendChild(box);
+            frameCount++;
+
+            currentTime += FRAME_INTERVAL;
+            if (currentTime <= video.duration) {
+                extractNextFrame();
+            } else {
+                statusDiv.textContent = `Done! Extracted ${frameCount} frames.`;
+            }
+        });
+
+        function extractNextFrame() {
+            video.currentTime = currentTime;
+        }
+
+        video.addEventListener('error', () => {
+            statusDiv.textContent = 'Error loading video. Make sure the file is in the same directory.';
+        });
+    </script>
+</body>
+</html>

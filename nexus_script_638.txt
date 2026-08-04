@@ -1,0 +1,481 @@
+Created At: 2026-08-02T09:13:56Z
+Completed At: 2026-08-02T09:13:57Z
+File Path: `file:///c:/New%20folder/original_html_but_in_text.txt`
+Total Lines: 922
+Total Bytes: 47991
+Showing lines 450 to 922
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+450:             
+451:             /* Reduce card padding so text fits nicely */
+452:             .editorial-card { padding: 25px; }
+453:             
+454:             /* Adjust Modal for mobile */
+455:             .modal-content { padding: 25px; width: 95%; max-width: none; margin: 0 auto; }
+456:             #modal-project-title { font-size: 1.8rem; }
+457:             
+458:             /* Contact section constrained properly for mobile to prevent massive cards */
+459:             #contact .editorial-grid { width: 100%; max-width: 500px; margin: 0 auto; }
+460:             #contact .editorial-card { padding: 30px 20px; }
+461:             
+462:             /* Contact icons wrap nicely */
+463:             .contact-links { flex-wrap: wrap; justify-content: center; }
+464:         }
+465:     </style>
+466: </head>
+467: <body>
+468: 
+469:     <!-- Premium Modern Loading / Landing Screen -->
+470:     <div id="loader">
+471:         <div class="loader-content">
+472:             <div id="dynamic-suuu" class="suuu-dynamic">S</div>
+473:             <div class="loader-bar-container">
+474:                 <div class="loader-bar" id="loader-bar"></div>
+475:             </div>
+476:             <div class="loader-percentage" id="loader-percentage">0%</div>
+477:         </div>
+478:     </div>
+479: 
+480:     <!-- Dynamic Smooth Ring & Negative Dot Cursor -->
+481:     <div id="cursor-dot"></div>
+482:     <div id="cursor-ring"></div>
+483: 
+484:     <!-- 3D Nexus Background -->
+485:     <canvas id="webgl-canvas"></canvas>
+486: 
+487:     <!-- Liquid Glass Navigation -->
+488:     <nav>
+489:         <a href="#home" class="nav-logo hover-target">
+490:             <img src="https://github.com/DYNOSuprovo/DYNOSuprovo.github.io/blob/main/image.png?raw=true" alt="Logo">
+491:             <span id="nav-logo-text">SUPROVO</span>
+492:         </a>
+493:         <div class="nav-center">
+494:             <a href="#home" class="nav-link active hover-target">Home</a>
+495:             <a href="#about" class="nav-link hover-target">About</a>
+496:             <a href="#experience" class="nav-link hover-target">Experience</a>
+497:             <a href="#skills" class="nav-link hover-target">Skills</a>
+498:             <a href="#projects" class="nav-link hover-target">Projects</a>
+499:         </div>
+500:         <div class="nav-right">
+501:             <button id="theme-toggle" class="theme-toggle hover-target" aria-label="Toggle Theme">
+502:                 <i class="fas fa-sun" id="theme-icon"></i>
+503:             </button>
+504:             <a href="#contact" class="nav-link nav-cta hover-target">Contact</a>
+505:         </div>
+506:     </nav>
+507: 
+508:     <!-- Main Content Layer -->
+509:     <div id="ui-layer">
+510:         
+511:         <!-- Hero Section -->
+512:         <section id="home" class="hero container">
+513:             <h1 class="hero-title">Suprovo <span class="highlight">Mallick</span></h1>
+514:             <p class="hero-subtitle">AI/ML Developer • GenAI Enthusiast • Problem Solver</p>
+515:             <span class="role-badge">GenAI Developer | RAG Specialist</span>
+516:             <div class="hero-buttons">
+517:                 <a href="#projects" class="btn hover-target">View My Work</a>
+518:                 <a href="#resume" class="btn secondary hover-target">View Resume</a> 
+519:             </div>
+520:         </section>
+521: 
+522:         <!-- About Section -->
+523:         <section id="about" class="container">
+524:             <h2 id="about-title" class="section-title">About Me</h2>
+525:             <div class="editorial-grid">
+526:                 <div class="editorial-card hover-target"> 
+527:                     <h3 class="card-header">The Vision</h3>
+528:                     <div class="card-content">
+529:                         <p>I'm a passionate AI/ML developer from India, currently pursuing Computer Science at KIIT. My journey in AI began with a deep curiosity about how machines can understand and generate human language, evolving into a mission to build intelligent applications that solve real-world problems.</p>
+530:                         <p>I specialize in leveraging cutting-edge technologies like LangChain, Gemini API, and Retrieval-Augmented Generation (RAG) architectures to create dynamic and responsive solutions. My experience includes designing personalized chatbots, developing intelligent recommendation systems like Aahar AI, and building multilingual translation applications.</p>
+531:                     </div>
+532:                 </div>
+533:                 <div class="editorial-card hover-target">
+534:                     <h3 class="card-header">Timeline</h3> 
+535:                     <div class="timeline">
+536:                         <div class="timeline-item">
+537:                             <div class="timeline-date">2023</div>
+538:                             <div class="timeline-role" style="font-size: 0.95rem;">Began deep dive into ML.</div>
+539:                         </div>
+540:                         <div class="timeline-item">
+541:                             <div class="timeline-date">Early 2024</div>
+542:                             <div class="timeline-role" style="font-size: 0.95rem;">Developed first RAG system.</div>
+543:                         </div>
+544:                         <div class="timeline-item">
+545:                             <div class="timeline-date">Jul 2024</div>
+546:                             <div class="timeline-role" style="font-size: 0.95rem;">Started role at Fed Society.</div>
+547:                         </div>
+548:                         <div class="timeline-item">
+549:                             <div class="timeline-date">2025</div>
+550:                             <div class="timeline-role" style="font-size: 0.95rem;">Advanced LLM Ops Focus.</div>
+551:                         </div>
+552:                     </div>
+553:                 </div>
+554:             </div>
+555:         </section>
+556: 
+557:         <!-- Experience Section -->
+558:         <section id="experience" class="container">
+559:             <h2 id="experience-title" class="section-title">Experience</h2>
+560:             <div class="editorial-grid" style="grid-template-columns: 1fr;">
+561:                 <div class="editorial-card hover-target"> 
+562:                     <div class="timeline">
+563:                         <div class="timeline-item">
+564:                             <div class="timeline-date">Jul 2024 – Present</div>
+565:                             <div class="timeline-role">AI Chatbot & GenAI Developer</div>
+566:                             <div class="timeline-company">Fed Society</div>
+567:                             <ul class="timeline-details">
+568:                                 <li>Built and deployed modular FastAPI backends with session memory and RAG pipelines.</li>
+569:                                 <li>Improved response retrieval speed by 30% via embedding optimization.</li>
+570:                                 <li>Developed AI-powered wellness system as part of student startup initiative.</li>
+571:                             </ul>
+572:                         </div>
+573:                     </div>
+574:                 </div>
+575:             </div>
+576:         </section>
+577: 
+578:         <!-- Skills Section -->
+579:         <section id="skills" class="container">
+580:             <h2 id="skills-title" class="section-title">Technical Toolkit</h2>
+581:             <div class="skills-section-grid" id="skills-grid">
+582:                 <!-- Skill cards injected by JS -->
+583:             </div>
+584:             <div class="skills-footer-text">
+585:                 <p><strong>Core CS:</strong> Data Structures, Algorithms, OOP, REST APIs, System Design (Basics)</p>
+586:                 <p><strong>Soft Skills:</strong> Leadership, Communication, Problem Solving, Adaptability</p>
+587:             </div>
+588:         </section>
+589:             
+590:         <!-- Projects Section -->
+591:         <section id="projects" class="container">
+592:             <h2 id="projects-title" class="section-title">Featured Projects</h2>
+593:             <div class="editorial-grid" style="grid-template-columns: 1fr;"> 
+594:                 <div class="editorial-card">
+595:                     <div class="project-list" id="project-list">
+596:                         <!-- Projects injected by JS -->
+597:                     </div>
+598:                 </div>
+599:             </div>
+600:         </section>
+601:             
+602:         <!-- Resume, Certs & Publications Section -->
+603:         <section id="resume" class="container">
+604:             <h2 id="resume-title" class="section-title">Credentials</h2>
+605:             <div class="editorial-grid" style="grid-template-columns: repeat(2, 1fr);">
+606:                 <!-- Highlights spans 2 columns on desktop, 1 on mobile -->
+607:                 <div class="editorial-card span-2 hover-target">
+608:                     <h2 class="card-header">Resume Highlights</h2>
+609:                     <div class="card-content">
+610:                         <p>As a driven AI/ML Developer, I bring a strong foundation in machine learning, deep learning, and generative AI. My expertise spans building intelligent applications, optimizing models, and implementing RAG and Agentic AI architectures.</p>
+611:                         <ul class="timeline-details" style="margin-top: 20px;">
+612:                             <li>Deployed RAG-based AI assistants and Agentic workflows.</li>
+613:                             <li>Built disease detection systems (EfficientNetV2) and NMT systems (NLLB-200).</li>
+614:                             <li>Proficient in Python, TensorFlow, PyTorch, and vector databases.</li>
+615:                             <li>Experienced in cloud platforms, AWS Bedrock, and containerization (Docker).</li>
+616:                         </ul>
+617:                         <a href="#" target="_blank" class="btn secondary hover-target" style="margin-top: 25px; width: fit-content;">
+618:                             <i class="fas fa-download"></i> Download PDF
+619:                         </a>
+620:                     </div>
+621:                 </div>
+622: 
+623:                 <!-- Certifications -->
+624:                 <div class="editorial-card hover-target">
+625:                     <h2 class="card-header">Certifications</h2>
+626:                     <div class="card-content">
+627:                         <ul class="certifications-list">
+628:                             <li class="cert-item">
+629:                                 <div class="cert-title">IBM RAG and Agentic AI Professional</div>
+630:                                 <div class="cert-issuer">IBM via Coursera • 2026</div>
+631:                                 <a href="https://coursera.org/share/12db2151db7c5b063cbb941340efaabe" target="_blank" class="cert-link hover-target"><i class="fas fa-external-link-alt"></i> Credential</a>
+632:                             </li>
+633:                             <li class="cert-item">
+634:                                 <div class="cert-title">AWS Generative AI Applications</div>
+635:                                 <div class="cert-issuer">Amazon Web Services • 2026</div>
+636:                                 <a href="https://coursera.org/share/e740d15052333a21d14c0de7e3f1c4cc" target="_blank" class="cert-link hover-target"><i class="fas fa-external-link-alt"></i> Credential</a>
+637:                             </li>
+638:                             <li class="cert-item">
+639:                                 <div class="cert-title">Supervised ML: Regression & Classification</div>
+640:                                 <div class="cert-issuer">DeepLearning.AI • 2024</div>
+641:                             </li>
+642:                             <li class="cert-item">
+643:                                 <div class="cert-title">Career Essentials in Generative AI</div>
+644:                                 <div class="cert-issuer">Microsoft + LinkedIn • 2024</div>
+645:                             </li>
+646:                             <li class="cert-item">
+647:                                 <div class="cert-title">Google AI Essentials</div>
+648:                                 <div class="cert-issuer">Google • 2024</div>
+649:                             </li>
+650:                         </ul>
+651:                     </div>
+652:                 </div>
+653: 
+654:                 <!-- Publications -->
+655:                 <div class="editorial-card hover-target">
+656:                     <h2 class="card-header">Publications</h2>
+657:                     <div class="card-content">
+658:                         <ul class="certifications-list">
+659:                             <li class="cert-item">
+660:                                 <div class="cert-title">Raahi – Real-Time Public Transport Tracking System</div>
+661:                                 <div class="cert-issuer" style="margin-bottom: 10px;">Conference Paper, Proceedings of 15th Project Innovation Contest (PIC-2026), Satellite Event of ICDCIT-2026, KIIT</div>
+662:                                 <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+663:                                     • Designed distributed real-time tracking architecture optimized for low-network environments.<br>
+664:                                     • Selected among top 40 out of 160 submissions after peer review.
+665:                                 </div>
+666:                             </li>
+667:                         </ul>
+668:                     </div>
+669:                 </div>
+670: 
+671:             </div>
+672:         </section>
+673: 
+674:         <!-- Contact Section -->
+675:         <section id="contact" class="container">
+676:             <h2 id="contact-title" class="section-title">Initiate Protocol</h2>
+677:             <!-- Constrained the grid width perfectly to prevent oversized card look -->
+678:             <div class="editorial-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; width: 100%;"> 
+679:                 <div class="editorial-card hover-target" style="align-items: center; text-align: center;">
+680:                     <h2 class="card-header" style="font-size: 2.2rem;">Let's Connect</h2>
+681:                     <div class="card-content">
+682:                         <p style="max-width: 450px; margin: 0 auto 30px; font-size: 0.95rem;">Interested in collaborating on AI projects, building generative models, or have a question? The nexus is always open.</p>
+683:                         <div class="contact-links">
+684:                             <a href="https://github.com/DYNOSuprovo" target="_blank" class="contact-link-icon hover-target" title="GitHub"><i class="fa-brands fa-github"></i></a>
+685:                             <a href="https://www.linkedin.com/in/suprovo-mallick-abb582287/" target="_blank" class="contact-link-icon hover-target" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+686:                             <a href="https://twitter.com/suprovo1307" target="_blank" class="contact-link-icon hover-target" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+687:                             <a href="mailto:supromallick3@gmail.com" class="contact-link-icon hover-target" title="Email"><i class="fa-solid fa-envelope"></i></a>
+688:                         </div>
+689:                     </div>
+690:                 </div>
+691:             </div>
+692:         </section>
+693: 
+694:         <!-- Footer -->
+695:         <footer class="footer container">
+696:             Designed & Engineered by Suprovo Mallick
+697:         </footer>
+698:     </div>
+699:     
+700:     <!-- Project Modal -->
+701:     <div class="modal-overlay" id="project-modal">
+702:         <div class="modal-content">
+703:             <div class="modal-close hover-target" id="modal-close-btn"><i class="fa-solid fa-times"></i></div>
+704:             <h2 id="modal-project-title">Project Title</h2>
+705:             <div id="modal-project-stack">
+706:                 <!-- Skills injected -->
+707:             </div>
+708:             <div id="modal-project-description">
+709:                  <!-- Description -->
+710:             </div>
+711:             <div class="modal-links">
+712:                 <a href="#" id="modal-link-live" target="_blank" class="modal-link primary hover-target">
+713:                     <i class="fa-solid fa-rocket"></i> Live Demo
+714:                 </a>
+715:                 <a href="#" id="modal-link-github" target="_blank" class="modal-link secondary hover-target">
+716:                     <i class="fa-brands fa-github"></i> View Code
+717:                 </a>
+718:                 <button class="modal-link secondary hover-target" id="modal-ai-summary-btn" style="border-color: var(--accent-color); color: var(--accent-color);">
+719:                      <i class="fas fa-robot"></i> AI Summary
+720:                 </button>
+721:             </div>
+722:         </div>
+723:     </div>
+724:     
+725:     <!-- AI Summary Modal -->
+726:      <div class="modal-overlay" id="ai-summary-modal" style="z-index: 1001;">
+727:         <div class="modal-content" style="max-width: 500px; text-align: center;">
+728:             <div class="modal-close hover-target" id="ai-summary-close-btn"><i class="fa-solid fa-times"></i></div>
+729:             <h2 style="color: var(--accent-color); font-family: var(--font-heading); margin-bottom: 15px;">AI Generation</h2>
+730:             <p id="ai-summary-text" style="color: var(--text-muted); line-height: 1.6;"><i>Analyzing project data...</i></p>
+731:         </div>
+732:     </div>
+733: 
+734:     <!-- Three.js Library -->
+735:     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+736:     
+737:     <script>
+738:         // --- 0. PROCEDURAL SOUND ENGINE (Web Audio API) & GYROSCOPE ---
+739:         const SoundEngine = {
+740:             ctx: null,
+741:             init() {
+742:                 if (!this.ctx) {
+743:                     this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+744:                 }
+745:                 if (this.ctx.state === 'suspended') {
+746:                     this.ctx.resume();
+747:                 }
+748:             },
+749:             playHover() {
+750:                 if (!this.ctx || this.ctx.state !== 'running') return;
+751:                 const osc = this.ctx.createOscillator();
+752:                 const gain = this.ctx.createGain();
+753:                 osc.type = 'sine';
+754:                 osc.frequency.setValueAtTime(1200, this.ctx.currentTime); 
+755:                 gain.gain.setValueAtTime(0.015, this.ctx.currentTime); 
+756:                 gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.1);
+757:                 osc.connect(gain);
+758:                 gain.connect(this.ctx.destination);
+759:                 osc.start();
+760:                 osc.stop(this.ctx.currentTime + 0.1);
+761:             },
+762:             playClick() {
+763:                 if (!this.ctx || this.ctx.state !== 'running') return;
+764:                 const osc = this.ctx.createOscillator();
+765:                 const gain = this.ctx.createGain();
+766:                 osc.type = 'triangle';
+767:                 osc.frequency.setValueAtTime(300, this.ctx.currentTime); 
+768:                 gain.gain.setValueAtTime(0.04, this.ctx.currentTime);
+769:                 gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.15);
+770:                 osc.connect(gain);
+771:                 gain.connect(this.ctx.destination);
+772:                 osc.start();
+773:                 osc.stop(this.ctx.currentTime + 0.15);
+774:             },
+775:             playSweep(up = true) {
+776:                 if (!this.ctx || this.ctx.state !== 'running') return;
+777:                 const osc = this.ctx.createOscillator();
+778:                 const gain = this.ctx.createGain();
+779:                 osc.type = 'sine';
+780:                 if(up) {
+781:                     osc.frequency.setValueAtTime(200, this.ctx.currentTime);
+782:                     osc.frequency.exponentialRampToValueAtTime(600, this.ctx.currentTime + 0.2);
+783:                 } else {
+784:                     osc.frequency.setValueAtTime(600, this.ctx.currentTime);
+785:                     osc.frequency.exponentialRampToValueAtTime(200, this.ctx.currentTime + 0.2);
+786:                 }
+787:                 gain.gain.setValueAtTime(0.02, this.ctx.currentTime);
+788:                 gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.2);
+789:                 osc.connect(gain);
+790:                 gain.connect(this.ctx.destination);
+791:                 osc.start();
+792:                 osc.stop(this.ctx.currentTime + 0.2);
+793:             }
+794:         };
+795: 
+796:         // Gyroscope Orientation Handler for Mobile Parallax
+797:         function handleOrientation(event) {
+798:             let x = event.gamma || 0; // [-90, 90]
+799:             let y = event.beta || 0;  // [-180, 180]
+800:             
+801:             // Constrain tilt to 45 degrees max for smooth usability
+802:             x = Math.max(-45, Math.min(45, x));
+803:             y = Math.max(-45, Math.min(45, y));
+804:             
+805:             // Map degrees to our normalized -1 to +1 range
+806:             normX = x / 45;
+807:             normY = -(y / 45); // Invert Y so tilting phone forward points camera down
+808:         }
+809: 
+810:         // Initialize Audio and Gyroscope on first interaction
+811:         window.addEventListener('pointerdown', () => {
+812:             SoundEngine.init();
+813:             
+814:             // Request Gyro permission (required for iOS 13+)
+815:             if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+816:                 DeviceOrientationEvent.requestPermission()
+817:                 .then(permissionState => {
+818:                     if (permissionState === 'granted') {
+819:                         window.addEventListener('deviceorientation', handleOrientation);
+820:                     }
+821:                 })
+822:                 .catch(console.error);
+823:             } else {
+824:                 window.addEventListener('deviceorientation', handleOrientation);
+825:             }
+826:         }, { once: true });
+827: 
+828: 
+829:         // --- 1. THEME TOGGLE LOGIC ---
+830:         const themeBtn = document.getElementById('theme-toggle');
+831:         const themeIcon = document.getElementById('theme-icon');
+832:         let isLightMode = false;
+833: 
+834:         themeBtn.addEventListener('click', () => {
+835:             isLightMode = !isLightMode;
+836:             document.body.classList.toggle('light-theme', isLightMode);
+837:             themeIcon.className = isLightMode ? 'fas fa-moon' : 'fas fa-sun';
+838:             
+839:             if (scene) {
+840:                 if (isLightMode) {
+841:                     scene.fog.color.setHex(0xf4f0f8); 
+842:                     if(nexusData.ambientLight) { nexusData.ambientLight.color.setHex(0xffffff); nexusData.ambientLight.intensity = 0.8; }
+843:                     if(nexusData.topo) nexusData.topo.material.color.setHex(0xb76e79); 
+844:                     if(nexusData.pointLight) nexusData.pointLight.color.setHex(0xb76e79); 
+845:                     if(nexusData.storm) nexusData.storm.material.color.setHex(0xb76e79); 
+846:                     if(nexusData.kinetic) {
+847:                         nexusData.kinetic.material.color.setHex(0xe0dae6); 
+848:                         nexusData.kinetic.material.roughness = 0.6;
+849:                     }
+850:                     if(nexusData.singularityUniforms) {
+851:                         nexusData.singularityUniforms.uColor1.value.setHex(0xffffff);
+852:                         nexusData.singularityUniforms.uColor2.value.setHex(0xb76e79); 
+853:                     }
+854:                 } else {
+855:                     scene.fog.color.setHex(0x1a1a24); 
+856:                     if(nexusData.ambientLight) { nexusData.ambientLight.color.setHex(0x333344); nexusData.ambientLight.intensity = 1.0; }
+857:                     if(nexusData.topo) nexusData.topo.material.color.setHex(0x444455);
+858:                     if(nexusData.pointLight) nexusData.pointLight.color.setHex(0xA855F7); 
+859:                     if(nexusData.storm) nexusData.storm.material.color.setHex(0x888888); 
+860:                     if(nexusData.kinetic) {
+861:                         nexusData.kinetic.material.color.setHex(0x22222a); 
+862:                         nexusData.kinetic.material.roughness = 0.2;
+863:                     }
+864:                     if(nexusData.singularityUniforms) {
+865:                         nexusData.singularityUniforms.uColor1.value.setHex(0xffffff);
+866:                         nexusData.singularityUniforms.uColor2.value.setHex(0xA855F7); 
+867:                     }
+868:                 }
+869:             }
+870:         });
+871: 
+872:         // --- 2. DATA INJECTION & LOGIC ---
+873: const projects = [
+874:     {
+875:         "id": "project-01",
+876:         "title": "Wheat Guardian - AI Disease Detection",
+877:         "main_desc": "AI-Based Wheat Disease Detection System using EfficientNetV2 and FastAPI.",
+878:         "points": [
+879:             "Fine-tuned EfficientNetV2B2 achieving 93%+ accuracy on multi-class disease classification.",
+880:             "Built end-to-end inference pipeline with REST APIs and modular backend design.",
+881:             "Containerized and deployed with optimized cloud inference latency (~300ms)."
+882:         ],
+883:         "stack": ["TensorFlow", "EfficientNetV2", "FastAPI", "OpenCV", "Docker"],
+884:         "links": {
+885:             "live": "https://wheat-analysis-app.vercel.app",
+886:             "github": null
+887:         }
+888:     },
+889:     {
+890:         "id": "project-02",
+891:         "title": "Aahar - AI-Powered Diet & Wellness Companion",
+892:         "main_desc": "RAG-based nutrition assistant with vector retrieval for Indian diet planning.",
+893:         "points": [
+894:             "Built RAG-based nutrition assistant with vector retrieval for Indian diet planning.",
+895:             "Designed personalized calorie computation and AI-driven health advisory system.",
+896:             "Integrated multi-model LLM routing using Gemini and Groq APIs."
+897:         ],
+898:         "stack": ["LangChain", "Gemini API", "ChromaDB", "FastAPI", "Next.js"],
+899:         "links": {
+900:             "live": "https://aahar-react.vercel.app/",
+901:             "github": null
+902:         }
+903:     },
+904: 
+905:     {
+906:         "id": "project-05",
+907:         "title": "Intent Compiler – Multi-Agent AI Architecture Generator",
+908:         "main_desc": "AI system that converts product ideas into structured system architecture using LLM orchestration.",
+909:         "points": [
+910:             "Built multi-agent pipeline that converts natural language product ideas into structured technical architecture.",
+911:             "Generates requirements, database schema, and pseudo-code using agent orchestration.",
+912:             "Interactive Streamlit interface for real-time architecture generation."
+913:         ],
+914:         "stack": ["LangGraph", "Groq LLaMA", "Streamlit", "Python"],
+915:         "links": {
+916:             "live": "https://intent-compiler-bydyno.streamlit.app/",
+917:             "github": "https://github.com/DYNOSuprovo/intent-compiler"
+918:         }
+919:     },
+920: 
+921:     {
+922:         "id": "project-03"
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
