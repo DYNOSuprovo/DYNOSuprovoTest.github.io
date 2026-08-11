@@ -3365,15 +3365,15 @@
             let nextFrameToLoad = 100;
             function loadRestOfFrames() {
                 if (nextFrameToLoad < TOTAL_FRAMES) {
-                    const batchEnd = Math.min(nextFrameToLoad + 30, TOTAL_FRAMES);
+                    const batchEnd = Math.min(nextFrameToLoad + 5, TOTAL_FRAMES);
                     for (let f = nextFrameToLoad; f < batchEnd; f++) {
                         loadFrame(f);
                     }
                     nextFrameToLoad = batchEnd;
-                    setTimeout(loadRestOfFrames, 16);
+                    setTimeout(loadRestOfFrames, 250);
                 }
             }
-            setTimeout(loadRestOfFrames, 50);
+            setTimeout(loadRestOfFrames, 500);
 
             // Instant Fallback Renderer
             function getBestLoadedFrame(frameIdx) {
