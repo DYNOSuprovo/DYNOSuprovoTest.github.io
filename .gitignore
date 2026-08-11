@@ -51,7 +51,8 @@ index_backup_*.html
 index_before_*.html
 
 # Temp working directories
-try/
+try/*
+!try/frames_webp/
 try 2/
 safe_backup_checkpoint/
 
