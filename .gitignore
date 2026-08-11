@@ -50,8 +50,7 @@ original_full_source.html
 index_backup_*.html
 index_before_*.html
 
-# Extracted frames and video
-frames/
+# Temp working directories
 try/
 try 2/
 safe_backup_checkpoint/
