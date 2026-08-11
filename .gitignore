@@ -57,8 +57,6 @@ try 2/
 safe_backup_checkpoint/
 
 # Image screenshots (not site assets)
-image.png
-image copy*.png
 
 # Extracted styles (not the real one)
 extracted_styles.css
