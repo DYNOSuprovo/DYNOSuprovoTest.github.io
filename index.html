@@ -3020,22 +3020,25 @@
             "Hugging Face": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
             "OpenAI": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
             "DVC": "https://avatars.githubusercontent.com/u/36808544?s=200&v=4",
-            "Streamlit": "https://streamlit.io/images/brand/streamlit-mark-color.svg"
+            "Streamlit": "https://streamlit.io/images/brand/streamlit-mark-color.svg",
+            "Django": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg",
+            "Flask": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg",
+            "Pandas": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
         };
 
         const skills = [
-            "Python", "Java", "C++", "TensorFlow", "PyTorch", "scikit-learn", "LangChain", "LlamaIndex", "Groq", "Fusion 360", "MLflow",
-            "LangGraph", "RAG", "Vector Databases", "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI", "FastAPI", "Hugging Face", "DVC",
-            "Docker", "Git", "GitHub", "Jupyter", "Google Colab", "VS Code", "GCP", "AWS", "Postman", "OpenAI", "Streamlit"
+            "Python", "Java", "C++", "TensorFlow", "PyTorch", "scikit-learn", "LangChain", "LlamaIndex", "Groq", "Fusion 360", "MLflow", "Django",
+            "LangGraph", "RAG", "Vector Databases", "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI", "FastAPI", "Hugging Face", "DVC", "Flask",
+            "Docker", "Git", "GitHub", "Jupyter", "Google Colab", "VS Code", "GCP", "AWS", "Postman", "OpenAI", "Streamlit", "Pandas"
         ];
 
         // Inject Skills (3-Row DNA Marquee)
         const marqueeContainer = document.getElementById('skills-marquee');
         if (marqueeContainer) {
             // Split skills into 3 chunks
-            const row1 = skills.slice(0, 11);
-            const row2 = skills.slice(11, 22);
-            const row3 = skills.slice(22, 33);
+            const row1 = skills.slice(0, 12);
+            const row2 = skills.slice(12, 24);
+            const row3 = skills.slice(24, 36);
 
             const rowsData = [
                 { data: row1, dir: 'left', speed: '35s' },
