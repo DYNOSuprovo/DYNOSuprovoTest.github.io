@@ -269,14 +269,15 @@
         }
 
         .nav-link {
-            color: var(--text-muted);
+            color: var(--text-main);
+            opacity: 0.85;
             text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            transition: color 0.3s;
+            transition: opacity 0.3s, text-shadow 0.3s, color 0.3s;
             position: relative;
-            font-weight: 600;
+            font-weight: 700;
             padding-bottom: 6px;
         }
 
@@ -292,7 +293,8 @@
         }
 
         .nav-link:hover {
-            color: var(--text-main);
+            opacity: 1;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         .nav-link:hover::after,
@@ -301,7 +303,8 @@
         }
 
         .nav-link.active {
-            color: var(--text-main);
+            opacity: 1;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
 
         .theme-toggle {
@@ -383,8 +386,8 @@
         }
 
         .hero-id-container {
-            flex: 0 0 300px;
-            height: 420px;
+            flex: 0 0 330px;
+            height: 460px;
             position: relative;
             display: flex;
             justify-content: center;
@@ -408,8 +411,8 @@
 
         /* Black and White Animated ID Card */
         .id-card {
-            width: 230px;
-            height: 350px;
+            width: 260px;
+            height: 390px;
             background: linear-gradient(145deg, rgba(25, 25, 28, 0.9), rgba(8, 8, 10, 0.95));
             backdrop-filter: blur(30px);
             -webkit-backdrop-filter: blur(30px);
@@ -529,8 +532,8 @@
         /* Photo with Spinning Orbit Ring */
         .id-photo-container {
             position: relative;
-            width: 110px;
-            height: 110px;
+            width: 125px;
+            height: 125px;
             margin-top: 10px;
             margin-bottom: 18px;
             display: flex;
@@ -564,8 +567,8 @@
         }
 
         .id-photo {
-            width: 110px;
-            height: 110px;
+            width: 125px;
+            height: 125px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid rgba(255, 255, 255, 0.8);
@@ -1030,7 +1033,7 @@
 
         .skills-marquee-container.visible {
             opacity: 1;
-            transform: translateY(0) rotate(3deg);
+            transform: translateY(0) rotate(1deg);
         }
 
         #skills-title {
@@ -2075,6 +2078,43 @@
                 justify-content: center;
             }
         }
+
+        /* --- OVERRIDES FOR SHARPER AND MORE PROMINENT UI --- */
+        .editorial-card, .project-card, .btn, .cert-item, .app-preview-img-container, 
+        .large-flip-card, .flip-card-front, .flip-card-back, .skill-card, .id-card-content, 
+        .hero-buttons .btn {
+            border-radius: 2px !important; /* Sharp edges */
+        }
+
+        .hero-subtitle {
+            color: #ffffff !important;
+            font-weight: 500 !important;
+            font-size: 1.15rem !important;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+        
+        .role-badge {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+            border: 1px solid rgba(0, 240, 255, 0.5) !important;
+            background: rgba(0, 240, 255, 0.12) !important;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+
+        /* Make all muted text globally brighter for readability */
+        :root {
+            --text-muted: #d3dbe8 !important; /* Brighter gray for dark mode */
+        }
+        body.light-theme {
+            --text-muted: #4b5563 !important; /* Darker gray for light mode */
+        }
+        
+        /* Ensure specific dark descriptions and labels are visible */
+        .proj-card-desc, .timeline-role, .card-content p, .card-content div {
+            color: var(--text-muted) !important;
+            font-weight: 400 !important;
+        }
     </style>
 </head>
 
@@ -2182,11 +2222,11 @@
                 <div class="editorial-card hover-target">
                     <h3 class="card-header">The Vision</h3>
                     <div class="card-content">
-                        <p>I'm a passionate AI/ML developer from India, currently pursuing Computer Science at KIIT. My
+                        <p style="color: #ffffff !important; font-size: 1.05rem; font-weight: 500; line-height: 1.7;">I'm a passionate AI/ML developer from India, currently pursuing Computer Science at KIIT. My
                             journey in AI began with a deep curiosity about how machines can understand and generate
                             human language, evolving into a mission to build intelligent applications that solve
                             real-world problems.</p>
-                        <p>I specialize in leveraging cutting-edge technologies like LangChain, Gemini API, and
+                        <p style="color: #ffffff !important; font-size: 1.05rem; font-weight: 500; line-height: 1.7;">I specialize in leveraging cutting-edge technologies like LangChain, Gemini API, and
                             Retrieval-Augmented Generation (RAG) architectures to create dynamic and responsive
                             solutions. My experience includes designing personalized chatbots, developing intelligent
                             recommendation systems like Aahar AI, and building multilingual translation applications.
@@ -2807,24 +2847,30 @@
             "Jupyter": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg",
             "Google Colab": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
             "VS Code": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg",
-            "AWS-Bedrock": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+            "AWS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+            "LangChain": "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
+            "Gemini API": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg",
+            "ChromaDB": "https://mintlify.s3-us-west-1.amazonaws.com/chroma/logo/dark.svg",
+            "Ollama": "https://raw.githubusercontent.com/ollama/ollama/main/docs/ollama.png",
+            "LangGraph": "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
+            "LlamaIndex": "https://github.com/run-llama.png",
+            "GCP": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
+            "GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
         };
 
         const skills = [
-            "Python", "Java", "C++",
-            "TensorFlow", "PyTorch", "scikit-learn",
-            "LangChain", "RAG", "Vector Databases",
-            "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI",
-            "Docker", "Git", "Jupyter", "Google Colab", "VS Code", "AWS-Bedrock"
+            "Python", "Java", "C++", "TensorFlow", "PyTorch", "scikit-learn", "LangChain", "LlamaIndex",
+            "LangGraph", "RAG", "Vector Databases", "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI",
+            "Docker", "Git", "GitHub", "Jupyter", "Google Colab", "VS Code", "GCP", "AWS"
         ];
 
         // Inject Skills (3-Row DNA Marquee)
         const marqueeContainer = document.getElementById('skills-marquee');
         if (marqueeContainer) {
             // Split skills into 3 chunks
-            const row1 = skills.slice(0, 7);
-            const row2 = skills.slice(7, 14);
-            const row3 = skills.slice(14, 21);
+            const row1 = skills.slice(0, 8);
+            const row2 = skills.slice(8, 16);
+            const row3 = skills.slice(16, 24);
 
             const rowsData = [
                 { data: row1, dir: 'left', speed: '35s' },
@@ -3346,7 +3392,7 @@
                     frames[frameIdx] = img;
                     framesLoaded++;
 
-                    const pct = Math.min(Math.floor((framesLoaded / TOTAL_FRAMES) * 100), 100);
+                    const pct = Math.min(Math.floor((framesLoaded / 30) * 100), 100);
                     updateRealLoadingProgress(pct);
 
                     if (framesLoaded === 1 || frameIdx === 0) {
@@ -3356,21 +3402,21 @@
                 };
             }
 
-            // Immediately load first 100 frames for instant visual render
-            for (let f = 0; f < 100; f++) {
+            // Immediately load first 30 frames for instant visual render
+            for (let f = 0; f < 30; f++) {
                 loadFrame(f);
             }
 
-            // Progressive loader for remaining 1100 frames in background batches
-            let nextFrameToLoad = 100;
+            // Progressive loader for remaining 1170 frames in background batches
+            let nextFrameToLoad = 30;
             function loadRestOfFrames() {
                 if (nextFrameToLoad < TOTAL_FRAMES) {
-                    const batchEnd = Math.min(nextFrameToLoad + 5, TOTAL_FRAMES);
+                    const batchEnd = Math.min(nextFrameToLoad + 10, TOTAL_FRAMES);
                     for (let f = nextFrameToLoad; f < batchEnd; f++) {
                         loadFrame(f);
                     }
                     nextFrameToLoad = batchEnd;
-                    setTimeout(loadRestOfFrames, 250);
+                    setTimeout(loadRestOfFrames, 200);
                 }
             }
             setTimeout(loadRestOfFrames, 500);
@@ -3519,6 +3565,12 @@
                     velocityY += gravity;
                     velocityX += fx;
                     velocityY += fy;
+
+                    // Apply a subtle, organic wind force
+                    const time = Date.now() / 1500;
+                    const windForce = Math.sin(time) * 0.12 + Math.sin(time * 2.3) * 0.04;
+                    velocityX += windForce;
+
                     velocityX *= damp;
                     velocityY *= damp;
 
@@ -3527,7 +3579,7 @@
                 }
 
                 // Smooth rotation based on horizontal swing
-                const angle = (cardX - anchorX) * 0.045 + (velocityX * 0.25);
+                const angle = (cardX - anchorX) * 0.015 + (velocityX * 0.08);
                 const rad = angle * (Math.PI / 180);
 
                 const cardWidth = idCard.offsetWidth || 215;
