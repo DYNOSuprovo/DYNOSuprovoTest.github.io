@@ -1990,32 +1990,115 @@
             }
         }
 
-        /* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+        /* --- RESPONSIVENESS OVERRIDES --- */
+        @media (max-width: 1440px) {
+            .hero-id-container {
+                transform: scale(0.9);
+                transform-origin: center right;
+            }
+            .large-flip-card-front, .large-flip-card-back {
+                padding: 35px;
+            }
+        }
+
         @media (max-width: 950px) {
             .editorial-grid {
                 grid-template-columns: 1fr !important;
             }
-
             .span-2 {
                 grid-column: span 1 !important;
             }
         }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1002;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(5, 5, 10, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-link {
+            color: var(--text-main);
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: transform 0.4s ease, opacity 0.4s ease, color 0.3s;
+        }
+
+        .mobile-menu-link:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-overlay.active .mobile-menu-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu-overlay.active .mobile-menu-link:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu-overlay.active .mobile-menu-link:nth-child(2) { transition-delay: 0.15s; }
+        .mobile-menu-overlay.active .mobile-menu-link:nth-child(3) { transition-delay: 0.2s; }
+        .mobile-menu-overlay.active .mobile-menu-link:nth-child(4) { transition-delay: 0.25s; }
+        .mobile-menu-overlay.active .mobile-menu-link:nth-child(5) { transition-delay: 0.3s; }
+        .mobile-menu-overlay.active .mobile-menu-link:nth-child(6) { transition-delay: 0.35s; }
 
         @media (max-width: 768px) {
             nav {
                 padding: 15px 5vw;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
             }
-
             .nav-center {
                 display: none;
             }
-
+            .nav-right .nav-cta, .nav-right .resume-btn {
+                display: none;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
             .nav-right {
                 gap: 15px;
             }
-
             .hero {
                 flex-direction: column-reverse;
                 text-align: center;
@@ -2023,46 +2106,95 @@
                 padding-top: 8vh;
                 gap: 15px;
             }
-
             .hero-content {
                 max-width: 100%;
                 text-align: center;
                 margin-bottom: 30px;
             }
-
             .hero-id-container {
                 width: 100%;
                 flex: 0 0 auto;
                 min-height: 400px;
                 margin: 0;
                 margin-top: 20px;
+                transform: scale(0.85);
+                transform-origin: center;
             }
-
             .hero-title {
                 font-size: clamp(2.5rem, 10vw, 3.5rem);
                 text-align: center;
             }
-
             .hero-subtitle {
                 margin: 15px auto;
             }
-
-            /* Stack buttons cleanly on mobile */
             .hero-buttons {
                 flex-direction: column;
                 width: 100%;
                 max-width: 300px;
                 margin: 0 auto;
             }
-
             .hero-buttons .btn {
                 width: 100%;
                 justify-content: center;
             }
-
-            /* Reduce card padding so text fits nicely */
             .editorial-card {
                 padding: 25px;
+            }
+            
+            /* Responsive fixes for Featured Projects */
+            .large-flip-card-back {
+                flex-direction: column !important;
+                padding: 20px !important;
+                overflow-y: auto !important;
+                gap: 15px !important;
+                justify-content: flex-start !important;
+            }
+            .large-flip-card-back > div {
+                padding-left: 0 !important;
+                flex: none !important;
+            }
+            .app-preview-img-container {
+                height: 180px !important;
+                margin-bottom: 10px !important;
+            }
+            .large-flip-card-back h3 {
+                font-size: 1.5rem !important;
+                margin-bottom: 10px !important;
+            }
+            .large-flip-card-back ul {
+                margin-bottom: 15px !important;
+            }
+            .large-flip-card-back ul li {
+                font-size: 0.95rem !important;
+                margin-bottom: 8px !important;
+                line-height: 1.4 !important;
+            }
+            .card-actions-row {
+                flex-direction: column !important;
+                gap: 10px !important;
+                margin-top: 10px !important;
+            }
+            .card-actions-row a {
+                width: 100% !important;
+                justify-content: center !important;
+            }
+
+            /* Responsive fixes for Experience Sidebar */
+            .experience-card-wrapper {
+                flex-direction: column !important;
+            }
+            .exp-sidebar {
+                width: 100% !important;
+                border-right: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                padding: 20px !important;
+                text-align: center !important;
+            }
+            .exp-vertical-title {
+                writing-mode: horizontal-tb !important;
+                transform: none !important;
+                font-size: 2.5rem !important;
+                letter-spacing: 5px !important;
             }
 
             /* Adjust Modal for mobile */
@@ -2072,23 +2204,17 @@
                 max-width: none;
                 margin: 0 auto;
             }
-
             #modal-project-title {
                 font-size: 1.8rem;
             }
-
-            /* Contact section constrained properly for mobile to prevent massive cards */
             #contact .editorial-grid {
                 width: 100%;
                 max-width: 500px;
                 margin: 0 auto;
             }
-
             #contact .editorial-card {
                 padding: 30px 20px;
             }
-
-            /* Contact icons wrap nicely */
             .contact-links {
                 flex-wrap: wrap;
                 justify-content: center;
@@ -2184,8 +2310,21 @@
             <a href="#" class="resume-btn hover-target" download="resume.pdf">
                 Resume <i class="fas fa-download"></i>
             </a>
+            <button id="mobile-menu-toggle" class="mobile-menu-toggle hover-target" aria-label="Toggle Mobile Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay">
+        <a href="#home" class="mobile-menu-link">Home</a>
+        <a href="#about" class="mobile-menu-link">About</a>
+        <a href="#experience" class="mobile-menu-link">Experience</a>
+        <a href="#skills" class="mobile-menu-link">Skills</a>
+        <a href="#projects" class="mobile-menu-link">Projects</a>
+        <a href="#certifications" class="mobile-menu-link">Credentials</a>
+    </div>
 
     <!-- Main Content Layer -->
     <div id="ui-layer">
@@ -2864,7 +3003,7 @@
             "Docker": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg",
             "Git": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg",
             "Jupyter": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original-wordmark.svg",
-            "Google Colab": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
+            "Google Colab": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg",
             "VS Code": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original-wordmark.svg",
             "AWS": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
             "LangChain": "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
@@ -2877,22 +3016,26 @@
             "GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
             "FastAPI": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
             "Postman": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-            "Groq": "https://avatars.githubusercontent.com/u/137682220?s=200&v=4"
+            "Groq": "https://avatars.githubusercontent.com/u/137682220?s=200&v=4",
+            "Hugging Face": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+            "OpenAI": "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg",
+            "DVC": "https://avatars.githubusercontent.com/u/36808544?s=200&v=4",
+            "Streamlit": "https://streamlit.io/images/brand/streamlit-mark-color.svg"
         };
 
         const skills = [
-            "Python", "Java", "C++", "TensorFlow", "PyTorch", "scikit-learn", "LangChain", "LlamaIndex", "Groq",
-            "LangGraph", "RAG", "Vector Databases", "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI", "FastAPI",
-            "Docker", "Git", "GitHub", "Jupyter", "Google Colab", "VS Code", "GCP", "AWS", "Postman"
+            "Python", "Java", "C++", "TensorFlow", "PyTorch", "scikit-learn", "LangChain", "LlamaIndex", "Groq", "Fusion 360", "MLflow",
+            "LangGraph", "RAG", "Vector Databases", "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI", "FastAPI", "Hugging Face", "DVC",
+            "Docker", "Git", "GitHub", "Jupyter", "Google Colab", "VS Code", "GCP", "AWS", "Postman", "OpenAI", "Streamlit"
         ];
 
         // Inject Skills (3-Row DNA Marquee)
         const marqueeContainer = document.getElementById('skills-marquee');
         if (marqueeContainer) {
             // Split skills into 3 chunks
-            const row1 = skills.slice(0, 9);
-            const row2 = skills.slice(9, 18);
-            const row3 = skills.slice(18, 27);
+            const row1 = skills.slice(0, 11);
+            const row2 = skills.slice(11, 22);
+            const row3 = skills.slice(22, 33);
 
             const rowsData = [
                 { data: row1, dir: 'left', speed: '35s' },
@@ -3818,6 +3961,34 @@
                 parallaxBg.style.transform = `translateY(${scrollPos * 0.4}px)`;
             }
         });
+
+        // Mobile Menu Logic
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        if (mobileMenuToggle && mobileMenuOverlay) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isActive = mobileMenuOverlay.classList.contains('active');
+                if (isActive) {
+                    mobileMenuOverlay.classList.remove('active');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
+                } else {
+                    mobileMenuOverlay.classList.add('active');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
+                    document.body.style.overflow = 'hidden'; // prevent scrolling behind menu
+                }
+            });
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuOverlay.classList.remove('active');
+                    mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    document.body.style.overflow = '';
+                });
+            });
+        }
 
     </script>
 </body>
