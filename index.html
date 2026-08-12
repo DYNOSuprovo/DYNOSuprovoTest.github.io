@@ -2874,22 +2874,25 @@
             "LangGraph": "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
             "LlamaIndex": "https://github.com/run-llama.png",
             "GCP": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
-            "GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+            "GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+            "FastAPI": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+            "Postman": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+            "Groq": "https://avatars.githubusercontent.com/u/137682220?s=200&v=4"
         };
 
         const skills = [
-            "Python", "Java", "C++", "TensorFlow", "PyTorch", "scikit-learn", "LangChain", "LlamaIndex",
-            "LangGraph", "RAG", "Vector Databases", "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI",
-            "Docker", "Git", "GitHub", "Jupyter", "Google Colab", "VS Code", "GCP", "AWS"
+            "Python", "Java", "C++", "TensorFlow", "PyTorch", "scikit-learn", "LangChain", "LlamaIndex", "Groq",
+            "LangGraph", "RAG", "Vector Databases", "Gemini API", "ChromaDB", "FAISS", "Ollama", "Agentic AI", "FastAPI",
+            "Docker", "Git", "GitHub", "Jupyter", "Google Colab", "VS Code", "GCP", "AWS", "Postman"
         ];
 
         // Inject Skills (3-Row DNA Marquee)
         const marqueeContainer = document.getElementById('skills-marquee');
         if (marqueeContainer) {
             // Split skills into 3 chunks
-            const row1 = skills.slice(0, 8);
-            const row2 = skills.slice(8, 16);
-            const row3 = skills.slice(16, 24);
+            const row1 = skills.slice(0, 9);
+            const row2 = skills.slice(9, 18);
+            const row3 = skills.slice(18, 27);
 
             const rowsData = [
                 { data: row1, dir: 'left', speed: '35s' },
