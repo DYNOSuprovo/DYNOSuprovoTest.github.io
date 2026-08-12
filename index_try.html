@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suprovo Mallick | AI/ML Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png"
+        href="https://github.com/DYNOSuprovo/DYNOSuprovo.github.io/blob/main/image.png?raw=true">
+
+    <!-- SEO & Social Meta Tags (Open Graph) -->
+    <meta name="description"
+        content="AI/ML Engineer & Researcher. Building multi-agent systems, computer vision, and adaptive architectures.">
+    <meta property="og:title" content="Suprovo Mallick | AI/ML Portfolio">
+    <meta property="og:description"
+        content="AI/ML Engineer & Researcher. Building multi-agent systems, computer vision, and adaptive architectures.">
+    <meta property="og:image"
+        content="https://github.com/DYNOSuprovo/DYNOSuprovo.github.io/blob/main/image.png?raw=true">
+    <meta property="og:url" content="https://dynosuprovo.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suprovo Mallick | AI/ML Portfolio">
+    <meta name="twitter:description"
+        content="AI/ML Engineer & Researcher. Building multi-agent systems, computer vision, and adaptive architectures.">
+    <meta name="twitter:image"
+        content="https://github.com/DYNOSuprovo/DYNOSuprovo.github.io/blob/main/image.png?raw=true">
+
+    <!-- Fonts (Modern Aesthetic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&family=Instrument+Serif:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,600..800;1,6..96,600..800&family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles_try.css">
+</head>
+
+<body>
+    <!-- Parallax Background Layer -->
+    <div id="parallax-bg" style="position: fixed; top: 0; left: 0; width: 100vw; height: 120vh; background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 50px 50px; z-index: -1; pointer-events: none; opacity: 0.3; will-change: transform;"></div>
+
+    <!-- Scroll-Driven Video Frame Background -->
+    <canvas id="seq-canvas"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; opacity: 1; filter: brightness(1.35) contrast(1.08) saturate(1.2); transform: translateZ(0); will-change: opacity;"></canvas>
+    <!-- Ultra-light overlay so bright video background shines through brilliantly -->
+    <div id="seq-overlay"
+        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 1; pointer-events: none; background: linear-gradient(to bottom, rgba(5,5,10,0.05) 0%, rgba(5,5,10,0.12) 50%, rgba(5,5,10,0.18) 100%); opacity: 1; transition: opacity 0.5s;">
+    </div>
+
+    <!-- Premium Modern Loading / Landing Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div id="dynamic-suuu" class="suuu-dynamic">S</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+            <div class="loader-percentage" id="loader-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Dynamic Smooth Ring & Negative Dot Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- 3D Nexus Background removed to prevent overlap with frames -->
+    <!-- Liquid Glass Navigation -->
+    <nav>
+        <a href="#home" class="nav-logo hover-target">
+            <img src="https://github.com/DYNOSuprovo/DYNOSuprovo.github.io/blob/main/image.png?raw=true" alt="Logo">
+            <span id="nav-logo-text">SUPROVO</span>
+        </a>
+        <div class="nav-center">
+            <a href="#home" class="nav-link active hover-target">Home</a>
+            <a href="#about" class="nav-link hover-target">About</a>
+            <a href="#experience" class="nav-link hover-target">Experience</a>
+            <a href="#skills" class="nav-link hover-target">Skills</a>
+            <a href="#projects" class="nav-link hover-target">Projects</a>
+            <a href="#certifications" class="nav-link hover-target">Certifications & Credentials</a>
+        </div>
+        <div class="nav-right">
+            <button id="theme-toggle" class="theme-toggle hover-target" aria-label="Toggle Theme">
+                <i class="fas fa-sun" id="theme-icon"></i>
+            </button>
+            <a href="#contact" class="nav-link nav-cta hover-target">Contact</a>
+            <a href="#" class="resume-btn hover-target" download="resume.pdf">
+                Resume <i class="fas fa-download"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content Layer -->
+    <div id="ui-layer">
+
+        <!-- Hero Section -->
+        <section id="home" class="hero container">
+            <div class="hero-content">
+                <h1 class="hero-title">Suprovo <span class="highlight">Mallick</span></h1>
+                <p class="hero-subtitle">AI/ML Developer • GenAI Enthusiast • Problem Solver</p>
+                <span class="role-badge">GenAI Developer | RAG Specialist</span>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn hover-target">View My Work</a>
+                    <a href="#" class="btn secondary hover-target" download="resume.pdf">Download Resume <i
+                            class="fas fa-download"></i></a>
+                </div>
+            </div>
+            <div class="hero-id-container" id="physics-container">
+                <svg class="lanyard-string" id="lanyard">
+                    <line id="lanyard-line-left-bg" x1="0" y1="0" x2="0" y2="0" stroke="rgba(0,0,0,0.8)"
+                        stroke-width="5" />
+                    <line id="lanyard-line-right-bg" x1="0" y1="0" x2="0" y2="0" stroke="rgba(0,0,0,0.8)"
+                        stroke-width="5" />
+                    <line id="lanyard-line-left" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.8)"
+                        stroke-width="2" stroke-dasharray="5,2" />
+                    <line id="lanyard-line-right" x1="0" y1="0" x2="0" y2="0" stroke="rgba(255,255,255,0.8)"
+                        stroke-width="2" stroke-dasharray="5,2" />
+                </svg>
+                <div class="id-card hover-target" id="id-card">
+                    <canvas id="id-matrix-canvas" class="id-matrix-bg"></canvas>
+                    <div class="id-corner-tl"></div>
+                    <div class="id-corner-br"></div>
+                    <div class="id-clip clip-left"></div>
+                    <div class="id-clip clip-right"></div>
+                    <div class="id-photo-container">
+                        <img src="image.png" alt="Suprovo Mallick" class="id-photo" draggable="false">
+                    </div>
+                    <div class="id-info">
+                        <div class="id-name">Suprovo Mallick</div>
+                        <div class="id-role">AI/ML Developer</div>
+                        <div class="id-badge-status"><span class="status-dot"></span> VERIFIED DEV</div>
+                    </div>
+                    <div class="id-footer-graphic">
+                        <img src="image copy.png" alt="ID Graphic" class="id-footer-img" draggable="false">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2 id="about-title" class="section-title">About Me</h2>
+            <div class="editorial-grid">
+                <div class="editorial-card hover-target">
+                    <h3 class="card-header">The Vision</h3>
+                    <div class="card-content">
+                        <p style="color: #ffffff !important; font-size: 1.05rem; font-weight: 500; line-height: 1.7;">I'm a passionate AI/ML developer from India, currently pursuing Computer Science at KIIT. My
+                            journey in AI began with a deep curiosity about how machines can understand and generate
+                            human language, evolving into a mission to build intelligent applications that solve
+                            real-world problems.</p>
+                        <p style="color: #ffffff !important; font-size: 1.05rem; font-weight: 500; line-height: 1.7;">I specialize in leveraging cutting-edge technologies like LangChain, Gemini API, and
+                            Retrieval-Augmented Generation (RAG) architectures to create dynamic and responsive
+                            solutions. My experience includes designing personalized chatbots, developing intelligent
+                            recommendation systems like Aahar AI, and building multilingual translation applications.
+                        </p>
+                    </div>
+                </div>
+                <div class="editorial-card hover-target">
+                    <h3 class="card-header">Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-role" style="font-size: 0.95rem;">Began deep dive into ML.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Early 2024</div>
+                            <div class="timeline-role" style="font-size: 0.95rem;">Developed first RAG system.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jul 2024</div>
+                            <div class="timeline-role" style="font-size: 0.95rem;">Started role at Fed Society.</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2025</div>
+                            <div class="timeline-role" style="font-size: 0.95rem;">Advanced LLM Ops Focus.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="container">
+            <div class="experience-card-wrapper hover-target">
+                <div class="exp-sidebar">
+                    <h2 class="exp-vertical-title">EXP<br>ERI<br>ENCE</h2>
+                </div>
+                <div class="exp-content">
+                    <div class="timeline-item">
+                        <div class="timeline-date"><span class="status-dot"></span> JUL 2024 – PRESENT</div>
+                        <h3 class="timeline-role">AI Chatbot & GenAI Developer</h3>
+                        <div class="timeline-company">Fed Society</div>
+                        <ul class="timeline-details">
+                            <li>Built and deployed modular FastAPI backends with session memory and RAG pipelines.</li>
+                            <li>Improved response retrieval speed by 30% via embedding optimization.</li>
+                            <li>Developed AI-powered wellness system as part of student startup initiative.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="container">
+            <h2 class="section-title" id="skills-title">Technical Toolkit</h2>
+            <div class="skills-marquee-container" id="skills-marquee">
+                <!-- Skill marquee injected by JS -->
+            </div>
+            <div class="skills-footer-text">
+                <p><strong>Core CS:</strong> Data Structures, Algorithms, OOP, REST APIs, System Design (Basics)</p>
+                <p><strong>Soft Skills:</strong> Leadership, Communication, Problem Solving, Adaptability</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="sticky-projects-wrapper">
+            <div class="sticky-projects-container">
+                <h2 id="projects-title" class="section-title"
+                    style="position: absolute; top: 8vh; left: 0; width: 100%; text-align: center; z-index: 10; font-size: 3.5rem;">
+                    Featured Projects</h2>
+                <div class="projects-horizontal-track" id="projects-grid">
+                    <!-- Large 3D Flip Project Cards injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume, Certs & Publications Section -->
+        <section id="resume" class="container">
+            <h2 id="resume-title" class="section-title">Credentials</h2>
+            <div class="editorial-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <!-- Highlights spans 2 columns on desktop, 1 on mobile -->
+                <div class="editorial-card span-2 hover-target">
+                    <h2 class="card-header">Resume Highlights</h2>
+                    <div class="card-content">
+                        <p>As a driven AI/ML Developer, I bring a strong foundation in machine learning, deep learning,
+                            and generative AI. My expertise spans building intelligent applications, optimizing models,
+                            and implementing RAG and Agentic AI architectures.</p>
+                        <ul class="timeline-details" style="margin-top: 20px;">
+                            <li>Deployed RAG-based AI assistants and Agentic workflows.</li>
+                            <li>Built disease detection systems (EfficientNetV2) and NMT systems (NLLB-200).</li>
+                            <li>Proficient in Python, TensorFlow, PyTorch, and vector databases.</li>
+                            <li>Experienced in cloud platforms, AWS Bedrock, and containerization (Docker).</li>
+                        </ul>
+                        <a href="#" target="_blank" class="btn secondary hover-target"
+                            style="margin-top: 25px; width: fit-content;">
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Education Card -->
+                <div class="editorial-card hover-target">
+                    <h2 class="card-header"><i class="fas fa-graduation-cap"
+                            style="color: var(--accent-color); margin-right: 8px;"></i> Education</h2>
+                    <div class="card-content">
+                        <ul class="certifications-list">
+                            <li class="cert-item">
+                                <div class="cert-title">B.Tech in Computer Science and Engineering</div>
+                                <div class="cert-issuer">Kalinga Institute of Industrial Technology (KIIT) • 2023 – 2027
+                                </div>
+                            </li>
+                            <li class="cert-item">
+                                <div class="cert-title">Foundation Level Certificate, BS in Data Science & Applications
+                                </div>
+                                <div class="cert-issuer">IIT Madras • Dec 2023</div>
+                                <a href="https://drive.google.com/file/d/1W8ETfNcegEn2WlV4IxyIltRfpcoPl2ZI/view?usp=drive_link"
+                                    target="_blank" class="cert-link hover-target"><i
+                                        class="fas fa-external-link-alt"></i> Credential</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Competitive Programming Card -->
+                <div class="editorial-card hover-target">
+                    <h2 class="card-header"><i class="fas fa-code"
+                            style="color: var(--accent-color); margin-right: 8px;"></i> Competitive Programming</h2>
+                    <div class="card-content">
+                        <ul class="timeline-details" style="margin-bottom: 15px;">
+                            <li>Solved <strong>340+ algorithmic problems</strong> across LeetCode & HackerRank.</li>
+                            <li><strong>LeetCode Contest Rating: 1432</strong> (Top ~70% globally).</li>
+                            <li>Earned <strong>5-Star Python Badge</strong> & Verified Python Certificate on HackerRank.
+                            </li>
+                        </ul>
+                        <div style="display: flex; gap: 12px; margin-top: 15px;">
+                            <a href="https://leetcode.com/u/supromallick3/" target="_blank"
+                                class="btn secondary hover-target" style="padding: 6px 14px; font-size: 0.8rem;">
+                                <i class="fas fa-terminal"></i> LeetCode Profile
+                            </a>
+                            <a href="https://www.hackerrank.com/profile/supromallick3" target="_blank"
+                                class="btn secondary hover-target" style="padding: 6px 14px; font-size: 0.8rem;">
+                                <i class="fab fa-hackerrank"></i> HackerRank
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Section (Individual Blocks Grid) -->
+                <section id="certifications" class="container">
+                    <h2 id="certifications-title" class="section-title">Certifications & Credentials</h2>
+                    <div class="projects-grid"
+                        style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;">
+
+                        <!-- Block 1 -->
+                        <div class="credential-card hover-target">
+                            <div>
+                                <div class="proj-badge-row" style="margin-bottom: 12px;">
+                                    <span class="proj-category-tag"
+                                        style="background: rgba(0, 240, 255, 0.1); color: #00f0ff; border-color: rgba(0, 240, 255, 0.3);">Udemy
+                                        • Jun 2026</span>
+                                    <i class="fas fa-robot" style="color: #00f0ff; font-size: 1.2rem;"></i>
+                                </div>
+                                <h3 class="proj-card-title" style="font-size: 1.15rem; margin-bottom: 8px;">AI Engineer
+                                    Agentic Track: Agent & MCP</h3>
+                                <p class="proj-card-desc"
+                                    style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+                                    Comprehensive agentic workflow architecture, Multi-Agent Systems, and Model Context
+                                    Protocol (MCP).</p>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <a href="https://ude.my/UC-aa0f48a4-38f1-419e-b002-480e77546e57" target="_blank"
+                                    class="card-action-btn primary hover-target"
+                                    style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.82rem; text-decoration: none;">
+                                    Verify Credential <i class="fas fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Block 2 -->
+                        <div class="credential-card hover-target">
+                            <div>
+                                <div class="proj-badge-row" style="margin-bottom: 12px;">
+                                    <span class="proj-category-tag"
+                                        style="background: rgba(138, 43, 226, 0.1); color: #b19ffb; border-color: rgba(138, 43, 226, 0.3);">IBM
+                                        • Coursera • Mar 2026</span>
+                                    <i class="fas fa-brain" style="color: #b19ffb; font-size: 1.2rem;"></i>
+                                </div>
+                                <h3 class="proj-card-title" style="font-size: 1.15rem; margin-bottom: 8px;">IBM RAG and
+                                    Agentic AI Specialization</h3>
+                                <p class="proj-card-desc"
+                                    style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Advanced
+                                    Retrieval-Augmented Generation, vector embeddings, LangChain, and autonomous AI
+                                    agents.</p>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <a href="https://coursera.org/share/31c66a1f30aa99e384edf689a3c9498a" target="_blank"
+                                    class="card-action-btn primary hover-target"
+                                    style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.82rem; text-decoration: none;">
+                                    Verify Credential <i class="fas fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Block 3 -->
+                        <div class="credential-card hover-target">
+                            <div>
+                                <div class="proj-badge-row" style="margin-bottom: 12px;">
+                                    <span class="proj-category-tag"
+                                        style="background: rgba(255, 153, 0, 0.1); color: #ff9900; border-color: rgba(255, 153, 0, 0.3);">AWS
+                                        • Feb 2026</span>
+                                    <i class="fab fa-aws" style="color: #ff9900; font-size: 1.3rem;"></i>
+                                </div>
+                                <h3 class="proj-card-title" style="font-size: 1.15rem; margin-bottom: 8px;">AWS
+                                    Generative AI Applications Specialization</h3>
+                                <p class="proj-card-desc"
+                                    style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Building
+                                    enterprise GenAI applications using AWS Bedrock, Amazon Titan, and Foundation
+                                    Models.</p>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <a href="https://coursera.org/share/e740d15052333a21d14c0de7e3f1c4cc" target="_blank"
+                                    class="card-action-btn primary hover-target"
+                                    style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.82rem; text-decoration: none;">
+                                    Verify Credential <i class="fas fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Block 4 -->
+                        <div class="credential-card hover-target">
+                            <div>
+                                <div class="proj-badge-row" style="margin-bottom: 12px;">
+                                    <span class="proj-category-tag"
+                                        style="background: rgba(255, 153, 0, 0.1); color: #ff9900; border-color: rgba(255, 153, 0, 0.3);">AWS
+                                        • Feb 2026</span>
+                                    <i class="fas fa-cloud" style="color: #ff9900; font-size: 1.2rem;"></i>
+                                </div>
+                                <h3 class="proj-card-title" style="font-size: 1.15rem; margin-bottom: 8px;">AWS
+                                    Fundamentals Specialization</h3>
+                                <p class="proj-card-desc"
+                                    style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Core cloud
+                                    architecture, IAM security, EC2, S3, serverless computing, and cloud deployment
+                                    pipelines.</p>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <a href="https://coursera.org/share/ec4f21ab86dc9465ff464cc25ef0e005" target="_blank"
+                                    class="card-action-btn primary hover-target"
+                                    style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.82rem; text-decoration: none;">
+                                    Verify Credential <i class="fas fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Block 5 -->
+                        <div class="editorial-card hover-target"
+                            style="display: flex; flex-direction: column; justify-content: space-between; padding: 24px; min-height: 210px;">
+                            <div>
+                                <div class="proj-badge-row" style="margin-bottom: 12px;">
+                                    <span class="proj-category-tag"
+                                        style="background: rgba(235, 87, 87, 0.1); color: #eb5757; border-color: rgba(235, 87, 87, 0.3);">IIT
+                                        Madras • Dec 2023</span>
+                                    <i class="fas fa-graduation-cap" style="color: #eb5757; font-size: 1.2rem;"></i>
+                                </div>
+                                <h3 class="proj-card-title" style="font-size: 1.15rem; margin-bottom: 8px;">Foundation
+                                    Level Certificate, BS Data Science</h3>
+                                <p class="proj-card-desc"
+                                    style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Foundational
+                                    mathematics, statistics, Python data analysis, and algorithmic computing from IIT
+                                    Madras.</p>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <a href="https://drive.google.com/file/d/1W8ETfNcegEn2WlV4IxyIltRfpcoPl2ZI/view?usp=drive_link"
+                                    target="_blank" class="card-action-btn primary hover-target"
+                                    style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.82rem; text-decoration: none;">
+                                    Verify Credential <i class="fas fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Block 6 -->
+                        <div class="editorial-card hover-target"
+                            style="display: flex; flex-direction: column; justify-content: space-between; padding: 24px; min-height: 210px;">
+                            <div>
+                                <div class="proj-badge-row" style="margin-bottom: 12px;">
+                                    <span class="proj-category-tag"
+                                        style="background: rgba(45, 156, 219, 0.1); color: #2d9cdb; border-color: rgba(45, 156, 219, 0.3);">Microsoft
+                                        + LinkedIn • Jul 2024</span>
+                                    <i class="fab fa-microsoft" style="color: #2d9cdb; font-size: 1.2rem;"></i>
+                                </div>
+                                <h3 class="proj-card-title" style="font-size: 1.15rem; margin-bottom: 8px;">Career
+                                    Essentials in Generative AI</h3>
+                                <p class="proj-card-desc"
+                                    style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">Core
+                                    principles of Generative AI, Large Language Models, prompt engineering, and ethical
+                                    AI development.</p>
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <a href="https://www.linkedin.com/learning/certificates/d194e5c715787c3fda6b61e78ad3724407010861e0dfa5a2060c32f6be5a027c"
+                                    target="_blank" class="card-action-btn primary hover-target"
+                                    style="display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; font-size: 0.82rem; text-decoration: none;">
+                                    Verify Credential <i class="fas fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Publications -->
+                <div class="editorial-card hover-target">
+                    <h2 class="card-header">Publications</h2>
+                    <div class="card-content">
+                        <ul class="certifications-list">
+                            <li class="cert-item">
+                                <div class="cert-title">Raahi – Real-Time Public Transport Tracking System</div>
+                                <div class="cert-issuer" style="margin-bottom: 10px;">Conference Paper, Proceedings of
+                                    15th Project Innovation Contest (PIC-2026), Satellite Event of ICDCIT-2026, KIIT
+                                </div>
+                                <div style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+                                    • Designed distributed real-time tracking architecture optimized for low-network
+                                    environments.<br>
+                                    • Selected among top 40 out of 160 submissions after peer review.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container">
+            <h2 id="contact-title" class="section-title">Initiate Protocol</h2>
+            <!-- Constrained the grid width perfectly to prevent oversized card look -->
+            <div class="editorial-grid"
+                style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="editorial-card hover-target" style="align-items: center; text-align: center;">
+                    <h2 class="card-header" style="font-size: 2.2rem;">Let's Connect</h2>
+                    <div class="card-content">
+                        <p style="max-width: 450px; margin: 0 auto 15px; font-size: 0.95rem;">Interested in
+                            collaborating on AI projects, building generative models, or have a question? The nexus is
+                            always open.</p>
+                        <p
+                            style="font-family: monospace; font-size: 0.85rem; color: var(--accent-color); margin-bottom: 25px;">
+                            <i class="fas fa-location-dot"></i> West Bengal, India • +91-8276028272</p>
+                        <div class="contact-links">
+                            <a href="https://github.com/DYNOSuprovo" target="_blank"
+                                class="contact-link-icon hover-target" title="GitHub"><i
+                                    class="fa-brands fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/suprovo-mallick-abb582287/" target="_blank"
+                                class="contact-link-icon hover-target" title="LinkedIn"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://huggingface.co/Dyno1307" target="_blank"
+                                class="contact-link-icon hover-target" title="HuggingFace"><i
+                                    class="fa-solid fa-face-smile"></i></a>
+                            <a href="https://leetcode.com/u/supromallick3/" target="_blank"
+                                class="contact-link-icon hover-target" title="LeetCode"><i class="fas fa-code"></i></a>
+                            <a href="https://www.hackerrank.com/profile/supromallick3" target="_blank"
+                                class="contact-link-icon hover-target" title="HackerRank"><i
+                                    class="fab fa-hackerrank"></i></a>
+                            <a href="mailto:supromallick3@gmail.com" class="contact-link-icon hover-target"
+                                title="Email"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer container">
+            Designed & Engineered by Suprovo Mallick
+        </footer>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <div class="modal-close hover-target" id="modal-close-btn"><i class="fa-solid fa-times"></i></div>
+            <h2 id="modal-project-title">Project Title</h2>
+            <div id="modal-project-stack">
+                <!-- Skills injected -->
+            </div>
+            <div id="modal-project-description">
+                <!-- Description -->
+            </div>
+            <div class="modal-links">
+                <a href="#" id="modal-link-live" target="_blank" class="modal-link primary hover-target">
+                    <i class="fa-solid fa-rocket"></i> Live Demo
+                </a>
+                <a href="#" id="modal-link-github" target="_blank" class="modal-link secondary hover-target">
+                    <i class="fa-brands fa-github"></i> View Code
+                </a>
+                <button class="modal-link secondary hover-target" id="modal-ai-summary-btn"
+                    style="border-color: var(--accent-color); color: var(--accent-color);">
+                    <i class="fas fa-robot"></i> AI Summary
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Summary Modal -->
+    <div class="modal-overlay" id="ai-summary-modal" style="z-index: 1001;">
+        <div class="modal-content" style="max-width: 500px; text-align: center;">
+            <div class="modal-close hover-target" id="ai-summary-close-btn"><i class="fa-solid fa-times"></i></div>
+            <h2 style="color: var(--accent-color); font-family: var(--font-heading); margin-bottom: 15px;">AI Generation
+            </h2>
+            <p id="ai-summary-text" style="color: var(--text-muted); line-height: 1.6;"><i>Analyzing project data...</i>
+            </p>
+        </div>
+    </div>
+
+    <!-- Three.js Library removed -->
+    <script src="script_try.js"></script>
+</body>
+
+</html>
